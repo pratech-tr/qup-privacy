@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qüp — Gizlilik Politikası</title>
+<style>html,body{margin:0}</style>
+</head>
+<body>
+<style>
+  :root {
+    --bg: #eef3f9;
+    --surface: #ffffff;
+    --text: #1b2733;
+    --muted: #5a6b7c;
+    --accent: #3f82b4;
+    --accent-soft: #eaf1f8;
+    --gold: #c8935f;
+    --border: #e2e9f1;
+    --shadow: 0 1px 2px rgba(27,39,51,.04), 0 12px 32px -12px rgba(27,39,51,.12);
+    --measure: 68ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d131a;
+      --surface: #161f29;
+      --text: #e3ebf3;
+      --muted: #93a3b4;
+      --accent: #6fb0dc;
+      --accent-soft: #17222e;
+      --gold: #d7a877;
+      --border: #26333f;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 40px -16px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #eef3f9; --surface: #ffffff; --text: #1b2733; --muted: #5a6b7c;
+    --accent: #3f82b4; --accent-soft: #eaf1f8; --gold: #c8935f; --border: #e2e9f1;
+    --shadow: 0 1px 2px rgba(27,39,51,.04), 0 12px 32px -12px rgba(27,39,51,.12);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d131a; --surface: #161f29; --text: #e3ebf3; --muted: #93a3b4;
+    --accent: #6fb0dc; --accent-soft: #17222e; --gold: #d7a877; --border: #26333f;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 18px 40px -16px rgba(0,0,0,.55);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 64px) clamp(20px, 5vw, 40px) 72px;
+  }
+
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .logo { width: 52px; height: 52px; flex: none; }
+  .head-text h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+  .updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 11px;
+    border-radius: 999px;
+  }
+  .updated .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  .intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: var(--measure);
+    margin: 0 0 44px;
+  }
+
+  section {
+    max-width: var(--measure);
+    margin-bottom: 34px;
+  }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 10px;
+    font-size: 1.16rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  section h2 .num {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    min-width: 1.4em;
+  }
+  section p { margin: 0 0 12px; }
+  section p:last-child { margin-bottom: 0; }
+  ul { margin: 8px 0 0; padding: 0; list-style: none; }
+  li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 0.68em;
+    width: 6px; height: 6px;
+    border-radius: 2px;
+    background: var(--gold);
+  }
+  li b, p b { color: var(--text); font-weight: 650; }
+  strong { font-weight: 700; }
+
+  .contact {
+    max-width: var(--measure);
+    margin-top: 44px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 26px;
+    box-shadow: var(--shadow);
+  }
+  .contact h2 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 700; }
+  .contact p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+  .mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.02rem;
+  }
+  .mail:hover { text-decoration: underline; }
+  .mail:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .mail svg { width: 18px; height: 18px; }
+
+  footer {
+    max-width: var(--measure);
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <svg class="logo" viewBox="0 0 260 260" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="qg" x1="97.99" y1="14.5" x2="166.31" y2="147.35" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#498FBF"/>
+          <stop offset="1" stop-color="#D2A278"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(32,25)">
+        <path fill="url(#qg)" fill-rule="evenodd" d="M90.2046 0.778496C95.219 -0.259476 100.393 -0.259521 105.408 0.778496C111.521 2.0441 117.033 5.2875 123.45 8.87908L168.753 34.2385C175.454 37.9892 181.354 41.1213 185.743 45.9054C189.34 49.8274 192.063 54.4705 193.728 59.5256C195.759 65.6923 195.61 72.3709 195.61 80.05V128.65C195.61 136.329 195.759 143.007 193.728 149.174C192.063 154.229 189.341 158.872 185.743 162.794C181.354 167.578 175.454 170.71 168.753 174.461L123.45 199.82C117.033 203.412 111.521 206.656 105.408 207.921C100.393 208.959 95.219 208.959 90.2046 207.921C84.0913 206.656 78.5788 203.412 72.1626 199.82L26.8589 174.461C20.1583 170.71 14.2587 167.578 9.86963 162.794C6.27174 158.872 3.54917 154.229 1.88428 149.174C-0.146642 143.007 0.00243951 136.329 0.00244506 128.65V80.05C0.00244506 72.3708 -0.146588 65.6924 1.88428 59.5256C3.54916 54.4703 6.27163 49.8275 9.86963 45.9054C14.2587 41.1211 20.1581 37.9893 26.8589 34.2385L72.1626 8.87908C78.5789 5.28743 84.0912 2.04402 90.2046 0.778496ZM100.34 25.2599C98.6689 24.9139 96.9434 24.914 95.272 25.2599C93.8307 25.5584 92.2134 26.3051 84.3735 30.6935L39.0708 56.0529C30.8744 60.641 29.3249 61.6794 28.2915 62.8058C27.0922 64.1131 26.1853 65.6609 25.6304 67.3459C25.1523 68.7978 25.0024 70.6574 25.0024 80.05V128.65C25.0024 138.042 25.1522 139.902 25.6304 141.354C26.1853 143.039 27.0923 144.587 28.2915 145.894C29.3249 147.02 30.8754 148.059 39.0708 152.647L84.3735 178.006C92.213 182.394 93.8307 183.141 95.272 183.44C96.9433 183.786 98.669 183.786 100.34 183.44C101.782 183.141 103.399 182.394 111.239 178.006L156.542 152.647C164.738 148.059 166.287 147.02 167.321 145.894C168.52 144.587 169.427 143.039 169.982 141.354C170.46 139.902 170.61 138.042 170.61 128.65V80.05C170.61 70.6579 170.46 68.7978 169.982 67.3459C169.427 65.661 168.52 64.1131 167.321 62.8058C166.287 61.6794 164.738 60.6408 156.542 56.0529L111.239 30.6935C103.4 26.3055 101.781 25.5584 100.34 25.2599ZM59.1724 120.368C63.8968 117.442 70.121 118.866 73.0737 123.549C73.0132 123.453 73.446 124.098 74.7114 125.194C75.8852 126.21 77.5449 127.412 79.6772 128.56C83.9121 130.838 89.9129 132.849 97.6108 132.849C113.011 132.849 120.94 124.754 122.029 123.184C125.185 118.633 131.465 117.48 136.056 120.609C140.647 123.737 141.81 129.962 138.654 134.513C134.194 140.943 120.32 152.848 97.6108 152.848C86.2541 152.848 76.9688 149.858 70.0522 146.137C63.4253 142.571 58.3993 138.009 55.9644 134.148C53.0121 129.465 54.4483 123.295 59.1724 120.368ZM67.8062 67.8498C74.7095 67.85 80.3062 73.4464 80.3062 80.3498C80.3059 87.253 74.7094 92.8496 67.8062 92.8498C60.9028 92.8498 55.3064 87.2531 55.3062 80.3498C55.3062 73.4462 60.9026 67.8498 67.8062 67.8498ZM129.806 67.8498C136.709 67.8501 142.306 73.4464 142.306 80.3498C142.306 87.253 136.709 92.8495 129.806 92.8498C122.903 92.8498 117.306 87.2531 117.306 80.3498C117.306 73.4462 122.903 67.8498 129.806 67.8498Z"/>
+      </g>
+    </svg>
+    <div class="head-text">
+      <h1>Qüp Gizlilik Politikası</h1>
+      <span class="updated"><span class="dot"></span>Son güncelleme: 4 Temmuz 2026</span>
+    </div>
+  </header>
+
+  <p class="intro">
+    Bu gizlilik politikası, Qüp mobil uygulamasının (&ldquo;Uygulama&rdquo;) kullanıcı verilerini nasıl
+    topladığını, kullandığını ve koruduğunu açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.
+  </p>
+
+  <section>
+    <h2><span class="num">1</span>Topladığımız Veriler</h2>
+    <ul>
+      <li><b>Hesap bilgileri:</b> Ad, e-posta adresi ve telefon numarası — kayıt ve giriş için.</li>
+      <li><b>Profil ve demografik bilgiler:</b> Profil fotoğrafı, doğum tarihi, cinsiyet, medeni durum, çocuk durumu, meslek, hane büyüklüğü ve gelir aralığı — size daha uygun kampanya ve içerik sunmak için, isteğe bağlı olarak paylaştığınız bilgiler.</li>
+      <li><b>Konum bilgileri:</b> Şehir ve ilçe bilginiz ile yakınınızdaki işletme ve kampanyaları göstermek için yaklaşık ve/veya kesin cihaz konumu — yalnızca izin verdiğinizde.</li>
+      <li><b>Alışveriş ve fiş verileri:</b> Yüklediğiniz veya hesabınıza eklenen fiş ve harcama bilgileri.</li>
+      <li><b>Fotoğraflar:</b> Fiş taraması ve profil fotoğrafı için seçtiğiniz veya çektiğiniz görseller.</li>
+      <li><b>Cihaz ve kullanım bilgileri:</b> Cihaz tanımlayıcıları, bildirim jetonu ve uygulama kullanım istatistikleri.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>Cihaz İzinleri</h2>
+    <p>Uygulama, yalnızca ilgili özelliği kullandığınızda ve onayınızla şu cihaz izinlerini talep eder:</p>
+    <ul>
+      <li><b>Konum izni:</b> Yakınınızdaki işletme ve size özel kampanyaları göstermek için.</li>
+      <li><b>Bildirim izni:</b> Kampanya, fiş ve hesap bilgilendirmelerini iletmek için.</li>
+      <li><b>Kamera izni:</b> Fişlerinizi tarayıp dijitalleştirmek için.</li>
+      <li><b>Fotoğraf / medya izni:</b> Profil fotoğrafı ve fiş görseli yüklemek için.</li>
+    </ul>
+    <p>Bu izinleri istediğiniz zaman cihaz ayarlarınızdan geri alabilirsiniz; ilgili özellikler o izne bağlı olarak çalışır.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Verileri Kullanma Amaçlarımız</h2>
+    <p>
+      Verileri; hesabınızı yönetmek, fişlerinizi saklamak ve analiz etmek, demografik bilgilerinize göre
+      size özel kampanya ve içerik sunmak, bildirim göndermek ve uygulamayı geliştirmek için kullanırız.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Üçüncü Taraf Hizmetler</h2>
+    <p>
+      Uygulama; Google (Firebase Analytics, Google ile Giriş) ve OneSignal (bildirim) hizmetlerini kullanır.
+      Bu hizmetler kendi gizlilik politikaları kapsamında sınırlı veri işleyebilir.
+      Verilerinizi pazarlama amacıyla üçüncü taraflara <strong>satmayız</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Veri Güvenliği</h2>
+    <p>
+      Tüm veri aktarımı şifreli bağlantı (HTTPS) üzerinden yapılır ve verileriniz yetkisiz erişime karşı korunur.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Veri Saklama ve Silme</h2>
+    <p>
+      Verilerinizi hesabınız aktif olduğu sürece saklarız.
+      <b>Hesabınızı ve tüm verilerinizi istediğiniz an Uygulama içinden &ldquo;Ayarlar → Hesabı Sil&rdquo;
+      adımıyla silebilirsiniz.</b> Alternatif olarak aşağıdaki e-posta üzerinden silme talebinde bulunabilirsiniz.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>Haklarınız</h2>
+    <p>
+      Verilerinize erişme, düzeltme ve silme hakkına sahipsiniz. Talepleriniz için bizimle iletişime geçebilirsiniz.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>Çocukların Gizliliği</h2>
+    <p>
+      Uygulama 13 yaş altı çocuklara yönelik değildir ve bilerek bu yaş grubundan veri toplamayız.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>Değişiklikler</h2>
+    <p>
+      Bu politikayı zaman zaman güncelleyebiliriz. Güncel sürüm her zaman bu sayfada yayınlanır.
+    </p>
+  </section>
+
+  <div class="contact">
+    <h2>İletişim</h2>
+    <p>Gizlilik ile ilgili soru veya taleplerinizde bize ulaşın:</p>
+    <a class="mail" href="mailto:info@pratech.tr">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+      </svg>
+      info@pratech.tr
+    </a>
+  </div>
+
+  <footer>
+    Qüp &middot; pra tech tarafından geliştirilmiştir. © 2026 Tüm hakları saklıdır.
+  </footer>
+</div>
+</body>
+</html>
